@@ -1,135 +1,157 @@
-import { Navigation } from '@/components/Navigation'
-import { Footer } from '@/components/Footer'
-import { Button } from '@/components/Button'
-import { FeatureCard } from '@/components/FeatureCard'
-import { PricingCard } from '@/components/PricingCard'
-import { FAQAccordion } from '@/components/FAQAccordion'
-import { SafetyBadge } from '@/components/SafetyBadge'
-import { Mic, Shield, Zap, Bell } from 'lucide-react'
+'use client'
+
+import Navigation from '@/components/Navigation'
+import Footer from '@/components/Footer'
 
 export default function Home() {
   return (
-    <>
+    <main>
       <Navigation />
       
       {/* Hero Section */}
-      <section className="bg-white">
-        <div className="container-narrow py-20 md:py-32 text-center">
-          <h1 className="text-h1-mobile md:text-h1-desktop text-heading max-w-4xl mx-auto mb-6">
-            Talk to your OpenClaw bot — safely.
-          </h1>
-          <p className="text-lg md:text-xl text-muted max-w-2xl mx-auto mb-8">
-            Voice, text, and images with 20+ character voices — plus every OpenClaw skill gets a safety score before you install it.
+      <section className="section section-white">
+        <div className="container-narrow text-center">
+          <h1>Your AI Assistant, One Tap Away</h1>
+          <p className="mt-6 text-muted" style={{ fontSize: '20px' }}>
+            Voice chat with your OpenClaw bot using 20+ character voices. Every skill is scanned for safety before you install.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
-            <Button href="#" size="large">Get ClawPhone</Button>
-            <Button href="#security" variant="secondary" size="large">See safety scores</Button>
+          <div className="mt-8" style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <a href="#pricing" className="btn btn-primary">Get ClawPhone</a>
+            <a href="#how-it-works" className="btn btn-secondary">See How It Works</a>
           </div>
-          <p className="text-sm text-gray-400">
-            Connect your existing OpenClaw bot. No new model. No hassle.
-          </p>
+          
+          {/* App Mockup Placeholder */}
+          <div className="mt-12" style={{ 
+            background: 'linear-gradient(135deg, #EEF2FF 0%, #ECFEFF 100%)', 
+            borderRadius: '24px', 
+            padding: '48px',
+            maxWidth: '320px',
+            margin: '48px auto 0'
+          }}>
+            <div style={{ 
+              background: '#1F2937', 
+              borderRadius: '32px', 
+              padding: '12px',
+              boxShadow: '0 25px 50px -12px rgba(0,0,0,0.25)'
+            }}>
+              <div style={{ 
+                background: '#111827', 
+                borderRadius: '24px', 
+                height: '400px',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: 'white'
+              }}>
+                <div style={{ fontSize: '48px', marginBottom: '16px' }}>🦞</div>
+                <div style={{ fontSize: '14px', color: '#9CA3AF' }}>ClawPhone</div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Social Proof Strip */}
-      <section className="bg-surface-off border-y border-gray-100">
-        <div className="container-wide py-8">
-          <div className="grid grid-cols-3 gap-4 md:gap-8">
-            <div className="text-center md:border-r border-gray-200">
-              <div className="text-3xl md:text-4xl font-bold text-heading">500+</div>
-              <div className="text-sm text-muted mt-1">Skills pre-scanned</div>
-            </div>
-            <div className="text-center md:border-r border-gray-200">
-              <div className="text-3xl md:text-4xl font-bold text-heading">Instant</div>
-              <div className="text-sm text-muted mt-1">Safety scores</div>
+      <section className="section-off-white" style={{ padding: '32px 16px' }}>
+        <div className="container">
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '48px', flexWrap: 'wrap' }}>
+            <div className="text-center">
+              <div style={{ fontSize: '32px', fontWeight: '700', color: '#111827' }}>12K+</div>
+              <div className="text-muted">Downloads</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-heading">Powered by</div>
-              <div className="text-sm text-muted mt-1">Cisco AI Defense</div>
+              <div style={{ fontSize: '32px', fontWeight: '700', color: '#111827' }}>4.8★</div>
+              <div className="text-muted">App Store Rating</div>
+            </div>
+            <div className="text-center">
+              <div style={{ fontSize: '32px', fontWeight: '700', color: '#111827' }}>500+</div>
+              <div className="text-muted">Beta Users</div>
             </div>
           </div>
         </div>
       </section>
 
       {/* How It Works */}
-      <section className="section-padding-lg">
-        <div className="container-wide">
-          <h2 className="text-h2-mobile md:text-h2-desktop text-center mb-12 md:mb-16">
-            How It Works
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8 md:gap-12">
-            {[
-              { num: 1, title: 'Connect your bot', desc: 'Link ClawPhone to your existing OpenClaw bot in seconds.' },
-              { num: 2, title: 'Chat your way', desc: 'Talk by voice, text, or images — with 20+ character voices you can swap anytime.' },
-              { num: 3, title: 'Install skills with confidence', desc: 'Browse skills with a clear safety score before you install — backed by automatic scanning.' },
-            ].map((step) => (
-              <div key={step.num} className="text-center md:text-left">
-                <div className="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center text-lg font-bold mx-auto md:mx-0 mb-4">
-                  {step.num}
-                </div>
-                <h3 className="text-xl font-semibold text-heading mb-2">{step.title}</h3>
-                <p className="text-body">{step.desc}</p>
-              </div>
-            ))}
+      <section id="how-it-works" className="section section-white">
+        <div className="container text-center">
+          <h2>How It Works</h2>
+          <p className="mt-4 text-muted">Three steps to safer AI conversations</p>
+          
+          <div className="grid-3 mt-12">
+            <div className="card" style={{ padding: '32px' }}>
+              <div style={{ fontSize: '48px', marginBottom: '16px' }}>1️⃣</div>
+              <h3>Connect Your Bot</h3>
+              <p className="mt-4 text-muted">Link your existing OpenClaw bot in seconds. No new subscriptions needed.</p>
+            </div>
+            <div className="card" style={{ padding: '32px' }}>
+              <div style={{ fontSize: '48px', marginBottom: '16px' }}>2️⃣</div>
+              <h3>Browse Skills Safely</h3>
+              <p className="mt-4 text-muted">Every skill shows a safety score. Green means safe. Amber means caution. Red means risk.</p>
+            </div>
+            <div className="card" style={{ padding: '32px' }}>
+              <div style={{ fontSize: '48px', marginBottom: '16px' }}>3️⃣</div>
+              <h3>Chat With Confidence</h3>
+              <p className="mt-4 text-muted">Voice, text, or images. 20+ character voices. Your data stays protected.</p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Features */}
-      <section className="section-padding-lg bg-surface-off">
-        <div className="container-wide">
-          <h2 className="text-h2-mobile md:text-h2-desktop text-center mb-12 md:mb-16">
-            Everything you need
-          </h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            <FeatureCard
-              icon={Mic}
-              title="Voice-first AI chat"
-              description="Speak naturally to your OpenClaw bot with 20+ character voices. Switch to text or images whenever you like."
-            />
-            <FeatureCard
-              icon={Shield}
-              title="Safety scores for skills"
-              description="Every skill shows green/amber/red before install. We scan for data leaks, hidden API keys, and suspicious network calls."
-            />
-            <FeatureCard
-              icon={Zap}
-              title="Pre-scanned, instant results"
-              description="Skills are scanned before you even see them. You get immediate scores and clear reasons — no waiting."
-            />
-            <FeatureCard
-              icon={Bell}
-              title="Stay protected automatically"
-              description="Get alerts when a skill's safety status changes. Keep a trusted list so you always know what's safe to use."
-            />
+      {/* Features Grid */}
+      <section className="section section-off-white">
+        <div className="container text-center">
+          <h2>Everything You Need</h2>
+          <p className="mt-4 text-muted">Powerful features for safer AI interactions</p>
+          
+          <div className="grid-3 mt-12">
+            <div className="card" style={{ padding: '24px', textAlign: 'left' }}>
+              <div style={{ fontSize: '32px', marginBottom: '12px' }}>🎤</div>
+              <h3 style={{ fontSize: '18px' }}>Voice Chat</h3>
+              <p className="mt-2 text-muted" style={{ fontSize: '14px' }}>Natural conversations with 20+ character voices</p>
+            </div>
+            <div className="card" style={{ padding: '24px', textAlign: 'left' }}>
+              <div style={{ fontSize: '32px', marginBottom: '12px' }}>🛡️</div>
+              <h3 style={{ fontSize: '18px' }}>Safety Scanning</h3>
+              <p className="mt-2 text-muted" style={{ fontSize: '14px' }}>Every skill checked before you install</p>
+            </div>
+            <div className="card" style={{ padding: '24px', textAlign: 'left' }}>
+              <div style={{ fontSize: '32px', marginBottom: '12px' }}>📷</div>
+              <h3 style={{ fontSize: '18px' }}>Image Chat</h3>
+              <p className="mt-2 text-muted" style={{ fontSize: '14px' }}>Share and discuss images with your bot</p>
+            </div>
+            <div className="card" style={{ padding: '24px', textAlign: 'left' }}>
+              <div style={{ fontSize: '32px', marginBottom: '12px' }}>⚡</div>
+              <h3 style={{ fontSize: '18px' }}>Instant Alerts</h3>
+              <p className="mt-2 text-muted" style={{ fontSize: '14px' }}>Get notified about new risks in your skills</p>
+            </div>
+            <div className="card" style={{ padding: '24px', textAlign: 'left' }}>
+              <div style={{ fontSize: '32px', marginBottom: '12px' }}>🔒</div>
+              <h3 style={{ fontSize: '18px' }}>Privacy First</h3>
+              <p className="mt-2 text-muted" style={{ fontSize: '14px' }}>Your conversations stay yours</p>
+            </div>
+            <div className="card" style={{ padding: '24px', textAlign: 'left' }}>
+              <div style={{ fontSize: '32px', marginBottom: '12px' }}>📱</div>
+              <h3 style={{ fontSize: '18px' }}>Native Mobile</h3>
+              <p className="mt-2 text-muted" style={{ fontSize: '14px' }}>Built for iOS and Android</p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Voice Chat Section */}
-      <section className="section-padding-lg">
-        <div className="container-wide">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-h2-mobile md:text-h2-desktop mb-6">
-                Your bot, on your phone — finally.
-              </h2>
-              <p className="text-lg text-body mb-8">
-                ClawPhone turns OpenClaw into a proper mobile experience. Talk by voice with character voices, send messages, share images, and pick up where you left off — your history and settings stay with you.
+      <section className="section section-white">
+        <div className="container">
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '48px', alignItems: 'center' }}>
+            <div className="text-center" style={{ maxWidth: '600px', margin: '0 auto' }}>
+              <h2>Talk to Your Bot Like a Friend</h2>
+              <p className="mt-6 text-muted">
+                Choose from 20+ character voices — from professional to playful. ClawPhone makes your AI assistant feel personal.
               </p>
-              <Button href="#">Get ClawPhone</Button>
-            </div>
-            <div className="flex justify-center">
-              <div className="relative">
-                <div className="w-64 h-[500px] bg-surface-dark rounded-[2.5rem] p-3 shadow-xl">
-                  <div className="w-full h-full bg-surface-dark-elevated rounded-[2rem] flex items-center justify-center">
-                    <div className="text-center text-white">
-                      <div className="text-5xl mb-4">🦞</div>
-                      <div className="text-lg font-semibold">ClawPhone</div>
-                      <div className="text-sm text-gray-400 mt-1">Voice chat active</div>
-                    </div>
-                  </div>
-                </div>
+              <div className="mt-8" style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', justifyContent: 'center' }}>
+                <span className="badge badge-green">🎭 20+ Voices</span>
+                <span className="badge badge-green">🎧 Crystal Clear Audio</span>
+                <span className="badge badge-green">⚡ Low Latency</span>
               </div>
             </div>
           </div>
@@ -137,158 +159,199 @@ export default function Home() {
       </section>
 
       {/* Security Section */}
-      <section id="security" className="section-padding-lg bg-surface-dark text-white">
-        <div className="container-wide">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="order-2 md:order-1 flex justify-center">
-              <div className="space-y-4">
-                {[
-                  { name: 'weather-skill', status: 'safe' as const },
-                  { name: 'data-export', status: 'caution' as const },
-                  { name: 'unknown-remote', status: 'danger' as const },
-                ].map((skill) => (
-                  <div key={skill.name} className="bg-surface-dark-elevated rounded-lg p-4 flex items-center justify-between min-w-[280px]">
-                    <span className="text-white font-medium">{skill.name}</span>
-                    <SafetyBadge status={skill.status} />
-                  </div>
-                ))}
+      <section className="section section-dark">
+        <div className="container text-center">
+          <h2>Skills Should Be Safe</h2>
+          <p className="mt-4" style={{ color: '#9CA3AF' }}>
+            ClawPhone scans every skill for security risks before you install. See exactly what you&apos;re adding to your bot.
+          </p>
+          
+          <div className="grid-3 mt-12">
+            <div style={{ padding: '24px' }}>
+              <div className="safety-score" style={{ justifyContent: 'center', marginBottom: '16px' }}>
+                <span className="safety-icon safety-icon-green">✓</span>
+                <span style={{ fontWeight: '600' }}>Safe</span>
               </div>
+              <p style={{ color: '#9CA3AF', fontSize: '14px' }}>No security risks detected. Install with confidence.</p>
             </div>
-            <div className="order-1 md:order-2">
-              <h2 className="text-h2-mobile md:text-h2-desktop mb-6">
-                Built-in safety checks for every skill.
-              </h2>
-              <p className="text-lg text-gray-300 mb-6">
-                Skills can do powerful things — and that&apos;s exactly why they need checking. Before you install a skill, ClawPhone scans it for common risk signals like hidden API keys, data leaks, and suspicious network calls. You see a simple safety score (green/amber/red) plus the reason behind it — so you can decide fast.
-              </p>
-              <p className="text-sm text-gray-400">
-                Scanning powered by Cisco AI Defense
-              </p>
+            <div style={{ padding: '24px' }}>
+              <div className="safety-score" style={{ justifyContent: 'center', marginBottom: '16px' }}>
+                <span className="safety-icon safety-icon-amber">!</span>
+                <span style={{ fontWeight: '600' }}>Caution</span>
+              </div>
+              <p style={{ color: '#9CA3AF', fontSize: '14px' }}>Minor concerns found. Review before installing.</p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing */}
-      <section className="section-padding-lg">
-        <div className="container-wide">
-          <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-h2-mobile md:text-h2-desktop mb-4">
-              Simple, transparent pricing
-            </h2>
-            <p className="text-lg text-muted">
-              Start free. Upgrade when you&apos;re ready.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            <div className="md:order-2">
-              <PricingCard
-                tier="Free"
-                price="£0"
-                description="A generous start for curious explorers. Use the web scanner, try 2 character voices, and get a feel for safer skill browsing before you go mobile."
-                features={[
-                  'Web scanner',
-                  '2 character voices',
-                  '10 messages/day',
-                ]}
-                ctaText="Start Free"
-              />
-            </div>
-            <div className="md:order-1 md:mt-8">
-              <PricingCard
-                tier="Pro"
-                price="£4.99"
-                period="/month"
-                description="The full ClawPhone experience. Get the mobile app, automatic skill scanning, push alerts, all voices, and unlimited messages."
-                features={[
-                  'Mobile app',
-                  'Automatic scanning',
-                  'Push alerts',
-                  'All 20+ voices',
-                  'Unlimited messages',
-                ]}
-                highlighted
-                ctaText="Get Pro"
-              />
-            </div>
-            <div className="md:order-3 md:mt-8">
-              <PricingCard
-                tier="Developer"
-                price="£19.99"
-                period="/month"
-                description="Ship trusted skills people install. Everything in Pro plus 1,000 API scans/month, CI/CD integration, and a verified badge."
-                features={[
-                  'Everything in Pro',
-                  '1,000 API scans/month',
-                  'CI/CD integration',
-                  'Verified badge',
-                ]}
-                ctaText="Go Developer"
-              />
+            <div style={{ padding: '24px' }}>
+              <div className="safety-score" style={{ justifyContent: 'center', marginBottom: '16px' }}>
+                <span className="safety-icon safety-icon-red">✕</span>
+                <span style={{ fontWeight: '600' }}>Risk</span>
+              </div>
+              <p style={{ color: '#9CA3AF', fontSize: '14px' }}>Security issues found. We recommend avoiding.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="section-padding-lg bg-surface-off">
-        <div className="container-narrow">
-          <h2 className="text-h2-mobile md:text-h2-desktop text-center mb-12">
-            Frequently asked questions
-          </h2>
-          <FAQAccordion
-            items={[
-              {
-                question: 'What is ClawPhone?',
-                answer: 'ClawPhone is a mobile application for iOS and Android designed for the OpenClaw AI ecosystem. It enables users to engage in voice, text, and image chat with OpenClaw bots using over 20 distinct character voices. Uniquely, ClawPhone includes an integrated security engine that automatically scans every OpenClaw skill for vulnerabilities and assigns a safety score prior to installation, ensuring user privacy and data security.',
-              },
-              {
-                question: 'How does skill scanning work?',
-                answer: 'When you browse skills in ClawPhone, each one has already been scanned by our security engine (powered by Cisco AI Defense). We look for common risk patterns like hidden API keys, data exfiltration attempts, and suspicious network calls. You see a simple green/amber/red score with plain-English explanations.',
-              },
-              {
-                question: 'Do I need a new OpenClaw bot?',
-                answer: 'No. ClawPhone connects to your existing OpenClaw bot. You keep your current setup, history, and preferences — ClawPhone just gives you a better mobile interface and built-in security scanning.',
-              },
-              {
-                question: 'What are character voices?',
-                answer: 'ClawPhone includes 20+ distinct text-to-speech voices you can use for your bot responses. From professional narrators to fun character voices, you can switch anytime to match your mood or use case.',
-              },
-              {
-                question: 'Is my data safe?',
-                answer: 'Yes. ClawPhone connects directly to your OpenClaw bot. We don\'t store your conversations or personal data. Skill scans are anonymized and only metadata is used for aggregate statistics.',
-              },
-              {
-                question: 'What platforms do you support?',
-                answer: 'ClawPhone is available for iOS and Android. The free web scanner works on any device with a browser.',
-              },
-              {
-                question: 'Can I use ClawPhone without the Pro plan?',
-                answer: 'Yes! The free tier gives you access to the web scanner, 2 character voices, and 10 messages per day. It\'s a great way to try ClawPhone before upgrading.',
-              },
-              {
-                question: 'How do I cancel my subscription?',
-                answer: 'You can cancel anytime through your app store (Apple App Store or Google Play). Your access continues until the end of your billing period.',
-              },
-            ]}
-            defaultOpen={[0, 1]}
-          />
+      {/* Pricing Section */}
+      <section id="pricing" className="section section-off-white">
+        <div className="container text-center">
+          <h2>Simple Pricing</h2>
+          <p className="mt-4 text-muted">Start free. Upgrade when you&apos;re ready.</p>
+          
+          <div className="grid-3 mt-12">
+            {/* Free Tier */}
+            <div className="card" style={{ padding: '32px' }}>
+              <h3>Free</h3>
+              <div className="mt-4">
+                <span style={{ fontSize: '48px', fontWeight: '700', color: '#111827' }}>£0</span>
+                <span className="text-muted">/month</span>
+              </div>
+              <ul style={{ marginTop: '24px', textAlign: 'left', listStyle: 'none' }}>
+                <li style={{ padding: '8px 0', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <span style={{ color: '#10B981' }}>✓</span> Web skill scanning
+                </li>
+                <li style={{ padding: '8px 0', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <span style={{ color: '#10B981' }}>✓</span> 2 character voices
+                </li>
+                <li style={{ padding: '8px 0', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <span style={{ color: '#10B981' }}>✓</span> 10 messages/day
+                </li>
+              </ul>
+              <a href="#" className="btn btn-secondary mt-8" style={{ width: '100%' }}>Get Started</a>
+            </div>
+
+            {/* Pro Tier */}
+            <div className="card pricing-featured" style={{ padding: '32px' }}>
+              <span className="pricing-badge">Most Popular</span>
+              <h3>Pro</h3>
+              <div className="mt-4">
+                <span style={{ fontSize: '48px', fontWeight: '700', color: '#111827' }}>£4.99</span>
+                <span className="text-muted">/month</span>
+              </div>
+              <ul style={{ marginTop: '24px', textAlign: 'left', listStyle: 'none' }}>
+                <li style={{ padding: '8px 0', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <span style={{ color: '#10B981' }}>✓</span> Full mobile app
+                </li>
+                <li style={{ padding: '8px 0', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <span style={{ color: '#10B981' }}>✓</span> 20+ character voices
+                </li>
+                <li style={{ padding: '8px 0', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <span style={{ color: '#10B981' }}>✓</span> Unlimited messages
+                </li>
+                <li style={{ padding: '8px 0', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <span style={{ color: '#10B981' }}>✓</span> Auto skill scanning
+                </li>
+                <li style={{ padding: '8px 0', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <span style={{ color: '#10B981' }}>✓</span> Priority alerts
+                </li>
+              </ul>
+              <a href="#" className="btn btn-primary mt-8" style={{ width: '100%' }}>Get Pro</a>
+            </div>
+
+            {/* Team Tier */}
+            <div className="card" style={{ padding: '32px' }}>
+              <h3>Team</h3>
+              <div className="mt-4">
+                <span style={{ fontSize: '48px', fontWeight: '700', color: '#111827' }}>£19</span>
+                <span className="text-muted">/month</span>
+              </div>
+              <ul style={{ marginTop: '24px', textAlign: 'left', listStyle: 'none' }}>
+                <li style={{ padding: '8px 0', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <span style={{ color: '#10B981' }}>✓</span> Everything in Pro
+                </li>
+                <li style={{ padding: '8px 0', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <span style={{ color: '#10B981' }}>✓</span> Up to 5 team members
+                </li>
+                <li style={{ padding: '8px 0', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <span style={{ color: '#10B981' }}>✓</span> Shared skill library
+                </li>
+                <li style={{ padding: '8px 0', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <span style={{ color: '#10B981' }}>✓</span> Admin dashboard
+                </li>
+              </ul>
+              <a href="#" className="btn btn-secondary mt-8" style={{ width: '100%' }}>Contact Sales</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section id="faq" className="section section-white">
+        <div className="container" style={{ maxWidth: '800px' }}>
+          <h2 className="text-center">Frequently Asked Questions</h2>
+          
+          <div className="mt-12">
+            <details className="faq-item">
+              <summary>What is ClawPhone?</summary>
+              <div className="faq-answer">
+                ClawPhone is a mobile application for iOS and Android designed for the OpenClaw AI ecosystem. It enables users to engage in voice, text, and image chat with OpenClaw bots using over 20 distinct character voices. Uniquely, ClawPhone includes an integrated security engine that automatically scans every OpenClaw skill for vulnerabilities and assigns a safety score prior to installation, ensuring user privacy and data security.
+              </div>
+            </details>
+
+            <details className="faq-item">
+              <summary>Do I need a new AI model to use ClawPhone?</summary>
+              <div className="faq-answer">
+                No. ClawPhone connects to your existing OpenClaw bot. You keep your bot — ClawPhone just makes it easier (and safer) to use.
+              </div>
+            </details>
+
+            <details className="faq-item">
+              <summary>What are &apos;skills&apos; in OpenClaw?</summary>
+              <div className="faq-answer">
+                Skills are add-ons that expand what your bot can do — like connectors, tools, or behaviours you install from ClawdHub. They can be useful… and sometimes risky.
+              </div>
+            </details>
+
+            <details className="faq-item">
+              <summary>What does ClawPhone scan for?</summary>
+              <div className="faq-answer">
+                ClawPhone checks skills for security risk signals like hidden API keys, data leaks, and suspicious network calls — plus other patterns that often indicate malicious or unsafe behaviour.
+              </div>
+            </details>
+
+            <details className="faq-item">
+              <summary>How do the safety scores work?</summary>
+              <div className="faq-answer">
+                You&apos;ll see a simple green/amber/red score before install, backed by a severity rating. You can also view the reason behind the score so you can make a quick call.
+              </div>
+            </details>
+
+            <details className="faq-item">
+              <summary>Is ClawPhone a standalone security scanner?</summary>
+              <div className="faq-answer">
+                No — ClawPhone is an app-first way to talk to your bot. The scanning is built in so you can browse and install skills with confidence while you use the app.
+              </div>
+            </details>
+
+            <details className="faq-item">
+              <summary>What about privacy — do you read my chats?</summary>
+              <div className="faq-answer">
+                ClawPhone is designed to let you talk to your OpenClaw bot while keeping the experience safe. Your chat history and settings stay with your ClawPhone experience so you can pick up where you left off.
+              </div>
+            </details>
+
+            <details className="faq-item">
+              <summary>What devices does ClawPhone support?</summary>
+              <div className="faq-answer">
+                ClawPhone is built for mobile: iOS and Android. Pro unlocks the mobile app experience, including automatic scanning and alerts.
+              </div>
+            </details>
+          </div>
         </div>
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 md:py-24 bg-gradient-to-br from-primary to-primary-hover">
-        <div className="container-narrow text-center">
-          <h2 className="text-h2-mobile md:text-h2-desktop text-white mb-8">
-            Make OpenClaw feel safe again.
-          </h2>
-          <Button href="#" variant="primary-inverse" size="large">
-            Get ClawPhone
-          </Button>
+      <section className="section section-dark">
+        <div className="container text-center">
+          <h2>Make OpenClaw feel safe again.</h2>
+          <p className="mt-6" style={{ color: '#9CA3AF', maxWidth: '600px', margin: '24px auto 0' }}>
+            Talk to your bot with voice, text, and images — and install skills with a safety score you can trust.
+          </p>
+          <a href="#pricing" className="btn btn-primary mt-8">Get ClawPhone</a>
         </div>
       </section>
 
       <Footer />
-    </>
+    </main>
   )
 }
