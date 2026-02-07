@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-surface-white text-body antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-heading;
+  }
+}
+
+@layer components {
+  .container-narrow {
+    @apply max-w-4xl mx-auto px-5 md:px-8;
+  }
+  
+  .container-wide {
+    @apply max-w-6xl mx-auto px-5 md:px-12;
+  }
+  
+  .section-padding {
+    @apply py-16 md:py-20;
+  }
+  
+  .section-padding-lg {
+    @apply py-16 md:py-24;
+  }
+}
+
+/* Smooth accordion animation */
+.accordion-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease;
+}
+
+.accordion-content.open {
+  grid-template-rows: 1fr;
+}
+
+.accordion-inner {
+  overflow: hidden;
+}
