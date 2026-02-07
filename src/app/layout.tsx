@@ -10,6 +10,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://clawphone.com'),
   title: 'ClawPhone: Talk to Your OpenClaw Bot Safely',
   description: 'Voice chat with 20+ character voices. Every OpenClaw skill gets a safety score before you install. Get ClawPhone for secure AI conversations.',
   openGraph: {
